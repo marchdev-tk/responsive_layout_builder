@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.4]
+
+* Update homepage link
+
 ## [0.4.3]
 
 * Migrated to GitHub

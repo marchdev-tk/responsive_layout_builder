@@ -1,0 +1,17 @@
+name: responsive_layout_builder_example
+author: Oleh Marchenko <oleh.marchenko.95@gmail.com>
+description: Demonstrates how to use the responsive_layout_builder package.
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  responsive_layout_builder:
+    path: ../
+
+flutter:
+  uses-material-design: true

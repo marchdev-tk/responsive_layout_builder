@@ -1,0 +1,18 @@
+name: responsive_layout_builder
+version: 0.4.2
+homepage: https://bitbucket.org/OlehMarchenko/eo.march.plugins
+description: Flutter package for building responsive layout based on screen sizes and orientation. It could be wristwatch, small/medium/large mobile, small/large tablet or desktop.
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  pedantic: ^1.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:

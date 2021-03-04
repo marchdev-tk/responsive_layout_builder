@@ -1,19 +1,20 @@
-// Copyright (c) 2020, the MarchDev Toolkit project authors. Please see the AUTHORS file
+// Copyright (c) 2021, the MarchDev Toolkit project authors. Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:flutter/widgets.dart';
-import 'package:responsive_layout_builder/src/layout_size.dart';
+
+import 'layout_size.dart';
 
 /// [ScreenSize] stores data of [LayoutSize], [MobileLayoutSize] and [TabletLayoutSize]
 class ScreenSize {
   /// Creates an instance of [ScreenSize] that stores data of [LayoutSize], [MobileLayoutSize] and [TabletLayoutSize]
   const ScreenSize({
-    @required this.size,
+    required this.size,
     this.mobile,
     this.tablet,
     this.orientation,
-  }) : assert(size != null);
+  });
 
   /// [size] is used for storing general screen type
   ///
@@ -23,15 +24,15 @@ class ScreenSize {
   /// [mobile] defines mobile screen type
   ///
   /// Could be [MobileLayoutSize.small], [MobileLayoutSize.medium] or [MobileLayoutSize.large]
-  final MobileLayoutSize mobile;
+  final MobileLayoutSize? mobile;
 
   /// [tablet] defines mobile screen type
   ///
   /// Could be [TabletLayoutSize.small] or [TabletLayoutSize.large]
-  final TabletLayoutSize tablet;
+  final TabletLayoutSize? tablet;
 
   /// [orientation] defines screen orientation
   ///
   /// Could be [Orientation.landscape] or [Orientation.portrait]
-  final Orientation orientation;
+  final Orientation? orientation;
 }

@@ -1,13 +1,13 @@
-// Copyright (c) 2020, the MarchDev Toolkit project authors. Please see the AUTHORS file
+// Copyright (c) 2021, the MarchDev Toolkit project authors. Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:flutter/widgets.dart';
 
-import 'package:responsive_layout_builder/src/layout_size.dart';
-import 'package:responsive_layout_builder/src/screen_size.dart';
-import 'package:responsive_layout_builder/src/screen_size_settings.dart';
-import 'package:responsive_layout_builder/src/size_calculations.dart';
+import 'layout_size.dart';
+import 'screen_size.dart';
+import 'screen_size_settings.dart';
+import 'size_calculations.dart';
 
 /// Signature for a function that builds a widget given an [LayoutSize].
 ///
@@ -23,15 +23,12 @@ class ResponsiveLayoutBuilder extends StatefulWidget {
   ///
   /// The [builder], [portraitSizes] and [landscapeSizes] argument must not be null.
   const ResponsiveLayoutBuilder({
-    Key key,
-    @required this.builder,
+    Key? key,
+    required this.builder,
     this.defaultSize = LayoutSize.mobile,
     this.portraitSizes = const ScreenSizeSettings.portrait(),
     this.landscapeSizes = const ScreenSizeSettings.landscape(),
-  })  : assert(builder != null),
-        assert(portraitSizes != null),
-        assert(landscapeSizes != null),
-        super(key: key);
+  }) : super(key: key);
 
   /// Builds the widgets below this widget given this widget's [LayoutSize]
   final ResponsiveLayoutWidgetBuilder builder;

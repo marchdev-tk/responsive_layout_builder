@@ -1,4 +1,4 @@
-// Copyright (c) 2020, the MarchDev Toolkit project authors. Please see the AUTHORS file
+// Copyright (c) 2021, the MarchDev Toolkit project authors. Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
@@ -50,10 +50,10 @@ class _MyAppState extends State<MyApp> {
                     Text('Layout Size: ${layoutSizeEnumToString[size.size]}'),
                     if (size.mobile != null)
                       Text(
-                          'Mobile Size: ${mobileLayoutSizeEnumToString[size.mobile]}'),
+                          'Mobile Size: ${mobileLayoutSizeEnumToString[size.mobile!]}'),
                     if (size.tablet != null)
                       Text(
-                          'Tablet Size: ${tabletLayoutSizeEnumToString[size.tablet]}'),
+                          'Tablet Size: ${tabletLayoutSizeEnumToString[size.tablet!]}'),
                   ],
                 ),
               ),

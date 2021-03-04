@@ -3,7 +3,7 @@ author: Oleh Marchenko <oleh.marchenko.95@gmail.com>
 description: Demonstrates how to use the responsive_layout_builder package.
 
 environment:
-  sdk: ">=2.2.2 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:

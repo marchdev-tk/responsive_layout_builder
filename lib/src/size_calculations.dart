@@ -1,12 +1,12 @@
-// Copyright (c) 2020, the MarchDev Toolkit project authors. Please see the AUTHORS file
+// Copyright (c) 2021, the MarchDev Toolkit project authors. Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:flutter/widgets.dart';
 
-import 'package:responsive_layout_builder/src/layout_size.dart';
-import 'package:responsive_layout_builder/src/screen_size.dart';
-import 'package:responsive_layout_builder/src/screen_size_settings.dart';
+import 'layout_size.dart';
+import 'screen_size.dart';
+import 'screen_size_settings.dart';
 
 /// Gets type of mobile layout size
 ///
@@ -14,14 +14,9 @@ import 'package:responsive_layout_builder/src/screen_size_settings.dart';
 ///
 /// [width] must not be null
 MobileLayoutSize getMobileLayoutSize({
-  @required double width,
+  required double width,
   ScreenSizeSettings sizes = const ScreenSizeSettings.portrait(),
 }) {
-  assert(() {
-    if (width == null) throw AssertionError('Width parameter must not be null');
-    return true;
-  }());
-
   MobileLayoutSize result;
 
   if (width > sizes.watch && width <= sizes.smallMobile) {
@@ -41,14 +36,9 @@ MobileLayoutSize getMobileLayoutSize({
 ///
 /// [width] must not be null
 TabletLayoutSize getTabletLayoutSize({
-  @required double width,
+  required double width,
   ScreenSizeSettings sizes = const ScreenSizeSettings.portrait(),
 }) {
-  assert(() {
-    if (width == null) throw AssertionError('Width parameter must not be null');
-    return true;
-  }());
-
   TabletLayoutSize result;
 
   if (width > sizes.largeMobile && width <= sizes.smallTablet) {
@@ -69,19 +59,14 @@ TabletLayoutSize getTabletLayoutSize({
 ///
 /// [width] must not be null
 ScreenSize getScreenSize({
-  @required double width,
-  Orientation orientation,
+  required double width,
+  Orientation? orientation,
   LayoutSize defaultSize = LayoutSize.mobile,
   ScreenSizeSettings sizes = const ScreenSizeSettings.portrait(),
 }) {
-  assert(() {
-    if (width == null) throw AssertionError('Width parameter must not be null');
-    return true;
-  }());
-
   LayoutSize size;
-  MobileLayoutSize mobile;
-  TabletLayoutSize tablet;
+  MobileLayoutSize? mobile;
+  TabletLayoutSize? tablet;
 
   if (width <= sizes.watch) {
     size = LayoutSize.watch;
@@ -94,7 +79,7 @@ ScreenSize getScreenSize({
   } else if (width > sizes.largeTablet) {
     size = LayoutSize.desktop;
   } else {
-    size = defaultSize ?? LayoutSize.mobile;
+    size = defaultSize;
   }
 
   return ScreenSize(
@@ -114,16 +99,11 @@ ScreenSize getScreenSize({
 ///
 /// [context] must not be null
 ScreenSize getContextualScreenSize({
-  @required BuildContext context,
-  Orientation orientation,
+  required BuildContext context,
+  Orientation? orientation,
   LayoutSize defaultSize = LayoutSize.mobile,
   ScreenSizeSettings sizes = const ScreenSizeSettings.portrait(),
 }) {
-  assert(() {
-    if (context == null) throw AssertionError('BuildContext must not be null');
-    return true;
-  }());
-
   return getScreenSize(
     width: MediaQuery.of(context).size.width,
     defaultSize: defaultSize,
